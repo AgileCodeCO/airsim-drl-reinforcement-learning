@@ -1,0 +1,62 @@
+{
+  "ClockSpeed": 1,
+  "SeeDocsAt": "https://github.com/Microsoft/AirSim/blob/master/docs/settings.md",
+  "SettingsVersion": 1.2,
+  "SimMode": "Multirotor",
+  "Vehicles": {
+    "drone_1": {
+      "Cameras": {
+        "fpv_cam": {
+          "CaptureSettings": [
+            {
+              "FOV_Degrees": 90,
+              "Height": 240,
+              "ImageType": 0,
+              "Width": 320
+            }
+          ],
+          "Pitch": 0.0,
+          "Roll": 0.0,
+          "X": 0.25,
+          "Y": 0.0,
+          "Yaw": 0.0,
+          "Z": 0.0
+        }
+      },
+      "Pitch": 0.0,
+      "Roll": 0.0,
+      "VehicleType": "SimpleFlight",
+      "X": 0.0,
+      "Y": 0.0,
+      "Yaw": 0.0,
+      "Z": 0.0,
+	  "Sensors": {
+		  "LidarSensor1" : {
+			  "SensorType": 6,
+                    "Enabled" : true,
+                    "NumberOfChannels": 72,
+					"Range" : 12,
+                    "RotationsPerSecond": 25,
+                    "PointsPerSecond": 100000,
+                    "X": 0, "Y": 0, "Z": -1,
+                    "Roll": 0, "Pitch": 0, "Yaw" : 0,
+                    "VerticalFOVUpper": 90,
+                    "VerticalFOVLower": -50.0,
+                    "HorizontalFOVStart": -40,
+                    "HorizontalFOVEnd": 40,
+                    "DrawDebugPoints": false,
+                    "DataFrame": "SensorLocalFrame"
+		  }
+	  }
+    },
+    "drone_2": {
+      "Pitch": 0.0,
+      "Roll": 0.0,
+      "VehicleType": "SimpleFlight",
+      "X": 0.0,
+      "Y": 0.0,
+      "Yaw": 0.0,
+      "Z": 0
+    }
+  }
+}

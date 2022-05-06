@@ -69,7 +69,7 @@ def train():
     #### create new log file for each run
     log_f_name = log_dir + '/PPO_' + env_name + "_log_" + str(run_num) + ".csv"
 
-    run_num_pretrained = 7      #### change this to prevent overwriting weights in same env_name folder
+    run_num_pretrained = 8      #### change this to prevent overwriting weights in same env_name folder
     continue_training = False
 
     directory = "models"
@@ -202,8 +202,8 @@ def test():
     eps_clip = 0.2              # clip parameter for PPO
     gamma = 0.99                # discount factor
 
-    lr_actor = 0.001           # learning rate for actor
-    lr_critic = 0.001           # learning rate for critic
+    lr_actor = 0.0001           # learning rate for actor
+    lr_critic = 0.0001           # learning rate for critic
 
     env = DRLEnvironment(viz_image_cv2=False, observation_type="lidar")
 
