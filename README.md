@@ -28,6 +28,8 @@ Uno de los puntos importantes del modelo de aprendizaje por refuerzo implementad
 <img src="https://github.com/AgileCodeCO/airsim-drl-reinforcement-learning/blob/main/img/model-diagram.png?raw=true">
 
  
+ Se implementa un modelo de aprendizaje por refuerzo basado en PPO con un agente que obtiene del entorno de simulación **AirSim Drone Racing Lab** una observación a partir de la cual se define un estado usando la nube de puntos 3D generada por el sensor **LiDAR** configurado en el dron. Dicho estado sirve como entrada para una red neuronal de aprendizaje profundo basada en la arquitectura **PointNet** que extrae sus características tridimensionales para entrenar una policy que ejecute acciones en el entorno para volar el dron a traves de las puertas de la pista y recibir una recompensa.
+
 
 # Pasos para ejecutar
 
@@ -79,7 +81,7 @@ Uno de los puntos importantes del modelo de aprendizaje por refuerzo implementad
 
     **.\ADRL.exe -windowed -NoVSync**
 
-2. Ejecutar el script de python por linea de comandos desde la carpeta donde se clonó código fuente:
+2. Ejecutar el script de python por linea de comandos desde la carpeta donde se clonó el código fuente:
 
     **python .\main.py --mode=train**
 
@@ -91,7 +93,7 @@ Uno de los puntos importantes del modelo de aprendizaje por refuerzo implementad
 
 2. Modificar la linea de código 225 del archivo **main.py** para definir con cual modelo pre-entrenado de la carpeta **models** se quiere probar. (5 o 7 son los mejores modelos)
 
-3. Ejecutar el script de python por linea de comandos desde la carpeta donde se clonó código fuente:
+3. Ejecutar el script de python por linea de comandos desde la carpeta donde se clonó el código fuente:
 
     **python .\main.py --mode=test**
 
