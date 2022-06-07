@@ -372,8 +372,10 @@ class DRLEnvironment(object):
     def step(self, action):
         
         #print(action)
-        x = np.clip(action[0], -self.max_axis_velocity, self.max_axis_velocity).astype(np.float) 
-        y = np.clip(action[1], -self.max_axis_velocity, self.max_axis_velocity).astype(np.float)
+        #x = np.clip(action[0], -self.max_axis_velocity, self.max_axis_velocity).astype(np.float) 
+        #y = np.clip(action[1], -self.max_axis_velocity, self.max_axis_velocity).astype(np.float)
+        x = action[0].astype(np.float) * 1.25 
+        y = action[1].astype(np.float) * 1.25
 
         #Read current state of the drone
         drone_state = self.airsim_client_odom.getMultirotorState()                    
@@ -388,7 +390,7 @@ class DRLEnvironment(object):
         self.airsim_client.moveByVelocityZAsync(x_rotated
                                                 , y_rotated
                                                 , z = 2
-                                                , duration = 2
+                                                , duration = 1.5
                                                 , drivetrain= airsim.DrivetrainType.ForwardOnly
                                                 , yaw_mode= airsim.YawMode(is_rate=False)
                                                 , vehicle_name=self.drone_name).join()
